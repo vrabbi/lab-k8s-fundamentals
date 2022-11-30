@@ -23,7 +23,7 @@ For the deployment of the front end web application, the container image we want
 To see what `kubectl create deployment` would create for us run:
 
 ```execute
-kubectl create deployment blog --image quay.io/eduk8s-labs/app-k8s-fundamentals-frontend:latest --replicas=2 --port=8080 --labels app=blog --dry-run -o yaml
+kubectl create deployment blog --image quay.io/eduk8s-labs/app-k8s-fundamentals-frontend:latest --replicas=2 --port=8080 --dry-run -o yaml
 ```
 
 This should yield:
