@@ -1,4 +1,4 @@
-apiVersion: training.eduk8s.io/v1alpha2
+apiVersion: learningcenter.tanzu.vmware.com/v1beta1
 kind: Workshop
 metadata:
   name: lab-k8s-fundamentals
@@ -14,7 +14,7 @@ spec:
   tags:
   - kubernetes
   content:
-    image: quay.io/eduk8s-labs/lab-k8s-fundamentals:master
+    image: harbor.vrabbi.cloud/tap/tap-packages@sha256:4814e0a3f2a9fb5250221ce7e6606fef795769ed0c5f79d859205f37b0fa3f96
   session:
     namespaces:
       budget: medium
