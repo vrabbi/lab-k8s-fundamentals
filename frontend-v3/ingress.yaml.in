@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: blog
@@ -6,10 +6,13 @@ metadata:
     app: blog
 spec:
   rules:
-  - host: blog-${SESSION_NAMESPACE}.${INGRESS_DOMAIN}
-    http:
-      paths:
-      - path: "/"
-        backend:
-          serviceName: blog
-          servicePort: 8080
+    - host: blog-${SESSION_NAMESPACE}.${INGRESS_DOMAIN}
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: blog
+                port:
+                  number: 8080
